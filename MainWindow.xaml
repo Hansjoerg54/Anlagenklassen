@@ -1,0 +1,48 @@
+﻿<Window x:Class="Anlagenklassen.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Anlagenklassen"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="570" Width="400">
+    <Window.Resources>
+        <DataTemplate x:Key="AnlagenklassenListTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Top" Width="100" Text="{Binding Path=ID}" />
+                <StackPanel>
+                    <TextBlock Text="{Binding Path=ID}" />
+                    <TextBlock Text="{Binding Path=Anlagenklasse}" />
+                    <TextBlock Text="{Binding Path=Sollanteil}" />
+                    <TextBlock Text="{Binding Path=Bemerkungen}" />
+                </StackPanel>
+                
+                
+            </StackPanel>
+ 
+        </DataTemplate>
+        
+    </Window.Resources>
+    <StackPanel Background="Yellow">
+        <Label Content="ID:"  />
+        <TextBox Name ="txt1" Text="{Binding Path=ID}"  />
+        <Label Content="Anlagenklasse:"  />
+        <TextBox Name ="txt2" Text="{Binding Path=Anlagenklasse}"  />
+        <Label Content="Sollanteil [%]:"  />
+        <TextBox Name ="txt3" Text="{Binding Path=Sollanteil}"  />
+        <Label Content="Bemerkungen:"  />
+        <TextBox Name ="txt4" Text="{Binding Path=Bemerkungen}"  />
+
+        <StackPanel Orientation="Horizontal">
+            <Button Content=" &lt; " Click="ButtonPrevious_Click"  />
+            <Button Content=" &gt; " Click="ButtonNeu_Click"  />
+            <Button Content=" Neu " Click="ButtonPrevious_Click"  />
+            <Button Content=" Löschen; " Click="ButtonLoeschen_Click"  />
+      </StackPanel>
+      <!--<ListBox  Height="100" IsSynchronizedWithCurrentItem="True"
+        ItemSource="{Binding  }"  />-->
+        
+        
+    </StackPanel>
+    
+</Window>
